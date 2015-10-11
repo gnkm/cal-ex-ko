@@ -1,0 +1,21 @@
+{
+  "name": "cal-ex-knockout",
+  "version": "1.0.0",
+  "description": "## Description",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@bitbucket.org/gnkm/cal-ex-knockout.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "homepage": "https://bitbucket.org/gnkm/cal-ex-knockout#readme",
+  "devDependencies": {
+    "bower": "^1.5.3",
+    "grunt-cli": "^0.1.13",
+    "grunt-contrib-coffee": "^0.13.0"
+  }
+}
