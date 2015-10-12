@@ -7,19 +7,34 @@
   </head>
   <body>
     <div class="container-fluid">
-      <div id="problems">
-	<h1>Calculation Excercise</h1>
+      <h1>Calculation Excercise</h1>
+      <div id="problems" data-bind="foreach: problems">
 	<form class="form-inline problem">
 	  <div class="form-group">
-	    <label for="">5 x 6 = </label>
-	    <input class="form-control" name="" type="text" value=""/>
+	    <label for="">
+	      <span class="first-arg" data-bind="text: firstArg"></span>
+	      X
+	      <span class="second-arg" data-bind="text: secondArg"></span>
+	      =
+	    </label>
+	    <input class="form-control" name="" type="text" value="" data-bind="value: userAnswer"/>
+	    <!-- ko if: correct -->
+	    <span class="glyphicon glyphicon-ok" aria-hidden="true" data-bind="visible: $root.answered"></span>
+	    <!-- /ko -->
+	    <!-- ko ifnot: correct -->
+	    <span class="glyphicon glyphicon-remove" aria-hidden="true" data-bind="visible: $root.answered"></span>
+	    <!-- /ko -->
+	    <span class="correct-answer" aria-hidden="true" data-bind="visible: $root.answered, text: correctAnswer"></span>
 	  </div>
 	</form>
-	<button class="btn btn-default" type="button">Answer!</button>
       </div>
+      <button class="btn btn-default" type="button" data-bind="click: answer">Answer!</button>
     </div>
     <script type="text/javascript" charset="utf-8" src="bower_components/jquery/dist/jquery.min.js"></script>
     <script type="text/javascript" charset="utf-8" src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
     <script type="text/javascript" charset="utf-8" src="bower_components/knockout/dist/knockout.js"></script>
+    <script type="text/javascript" charset="utf-8" src="src/js/problem_model.js"></script>
+    <script type="text/javascript" charset="utf-8" src="src/js/app_view_model.js"></script>
+    <script type="text/javascript" charset="utf-8" src="src/js/app.js"></script>
   </body>
 </html>
