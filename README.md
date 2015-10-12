@@ -14,3 +14,7 @@ Knockout.js による計算問題練習サイト
     $ bower install
 
 ## Usage
+
+## Demo
+
+[Demo](http://gnkm.github.io/cal-ex-ko/)
