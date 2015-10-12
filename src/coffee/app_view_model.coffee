@@ -38,3 +38,7 @@ class @AppViewModel
   changeProblemNumbers: (problemNumber) =>
     @problemNumber = problemNumber
     @problems(@generateProblems @problemNumber, @difficulty)
+
+  changeDifficulty: (difficulty) =>
+    @difficulty = difficulty
+    @problems(@generateProblems @problemNumber, @difficulty)

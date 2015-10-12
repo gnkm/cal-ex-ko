@@ -3,6 +3,7 @@
 
   this.AppViewModel = (function() {
     function AppViewModel() {
+      this.changeDifficulty = bind(this.changeDifficulty, this);
       this.changeProblemNumbers = bind(this.changeProblemNumbers, this);
       this.answer = bind(this.answer, this);
       this.generateRandom = bind(this.generateRandom, this);
@@ -46,6 +47,11 @@
 
     AppViewModel.prototype.changeProblemNumbers = function(problemNumber) {
       this.problemNumber = problemNumber;
+      return this.problems(this.generateProblems(this.problemNumber, this.difficulty));
+    };
+
+    AppViewModel.prototype.changeDifficulty = function(difficulty) {
+      this.difficulty = difficulty;
       return this.problems(this.generateProblems(this.problemNumber, this.difficulty));
     };
 
