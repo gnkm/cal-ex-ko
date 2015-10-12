@@ -30,7 +30,7 @@ class @AppViewModel
     return problems
 
   generateRandom: (min, max) =>
-    Math.floor(Math.random() * max) + min
+    Math.floor(Math.random() * (max - min + 1)) + min
 
   answer: () =>
     @answered true
