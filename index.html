@@ -4,10 +4,33 @@
     <meta charset="UTF-8"/>
     <title>Calculation Excercise</title>
     <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="src/css/styles.css" rel="stylesheet"/>
   </head>
   <body>
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+	  <a class="navbar-brand" href="#">Calculation Excercise</a>
+	</div>
+	<div class="collapse navbar-collapse">
+	  <ul class="nav navbar-nav navbar-right">
+	    <li class="dropdown">
+	      <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button">Problem Number <span class="caret"></span></a>
+	      <ul class="dropdown-menu" data-bind="foreach: problemNumbers">
+		<li><a href="#" data-bind="text: $data"></a></li>
+	      </ul>
+	    </li>
+	    <li class="dropdown">
+	      <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button">Difficulty <span class="caret"></span></a>
+	      <ul class="dropdown-menu" data-bind="foreach: difficulty">
+		<li><a href="#" data-bind="text: $data.display"></a></li>
+	      </ul>
+	    </li>
+	  </ul>
+	</div>
+      </div>
+    </nav>
     <div class="container-fluid">
-      <h1>Calculation Excercise</h1>
       <div id="problems" data-bind="foreach: problems">
 	<form class="form-inline problem">
 	  <div class="form-group">

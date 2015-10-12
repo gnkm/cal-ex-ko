@@ -2,7 +2,7 @@ class @AppViewModel
   constructor: () ->
     @problemNumbers = [5, 10, 15, 20]
 
-    @ranks = [
+    @difficulty = [
       {
         argMax: 9
         argMin: 1
@@ -15,7 +15,7 @@ class @AppViewModel
       }
     ]
 
-    @problems = @generateProblems @problemNumbers[0], @ranks[0]
+    @problems = @generateProblems @problemNumbers[0], @difficulty[0]
 
     @answered = ko.observable false
 

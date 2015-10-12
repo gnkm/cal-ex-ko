@@ -7,7 +7,7 @@
       this.generateRandom = bind(this.generateRandom, this);
       this.generateProblems = bind(this.generateProblems, this);
       this.problemNumbers = [5, 10, 15, 20];
-      this.ranks = [
+      this.difficulty = [
         {
           argMax: 9,
           argMin: 1,
@@ -18,7 +18,7 @@
           display: '11 の段から 19 の段'
         }
       ];
-      this.problems = this.generateProblems(this.problemNumbers[0], this.ranks[0]);
+      this.problems = this.generateProblems(this.problemNumbers[0], this.difficulty[0]);
       this.answered = ko.observable(false);
     }
 
