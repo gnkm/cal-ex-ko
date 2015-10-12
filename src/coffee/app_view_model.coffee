@@ -1,8 +1,9 @@
 class @AppViewModel
   constructor: () ->
     @problemNumbers = [5, 10, 15, 20]
+    @problemNumber = @problemNumbers[0]
 
-    @difficulty = [
+    @difficulties = [
       {
         argMax: 9
         argMin: 1
@@ -14,16 +15,17 @@ class @AppViewModel
         display: '11 の段から 19 の段'
       }
     ]
+    @difficulty = @difficulties[0]
 
-    @problems = @generateProblems @problemNumbers[0], @difficulty[0]
+    @problems = ko.observable(@generateProblems @problemNumber, @difficulty)
 
     @answered = ko.observable false
 
-  generateProblems: (problemNumber, rank) =>
+  generateProblems: (problemNumber, difficulty) =>
     problems = []
     for i in [1..problemNumber]
-      fstArg = @generateRandom rank.argMin, rank.argMax
-      scdArg = @generateRandom rank.argMin, rank.argMax
+      fstArg = @generateRandom difficulty.argMin, difficulty.argMax
+      scdArg = @generateRandom difficulty.argMin, difficulty.argMax
       problems.push(new ProblemModel fstArg, scdArg)
     return problems
 
@@ -32,3 +34,7 @@ class @AppViewModel
 
   answer: () =>
     @answered true
+
+  changeProblemNumbers: (problemNumber) =>
+    @problemNumber = problemNumber
+    @problems(@generateProblems @problemNumber, @difficulty)

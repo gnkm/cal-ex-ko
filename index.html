@@ -17,12 +17,12 @@
 	    <li class="dropdown">
 	      <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button">Problem Number <span class="caret"></span></a>
 	      <ul class="dropdown-menu" data-bind="foreach: problemNumbers">
-		<li><a href="#" data-bind="text: $data"></a></li>
+		<li><a href="#" data-bind="text: $data, click: $root.changeProblemNumbers"></a></li>
 	      </ul>
 	    </li>
 	    <li class="dropdown">
 	      <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button">Difficulty <span class="caret"></span></a>
-	      <ul class="dropdown-menu" data-bind="foreach: difficulty">
+	      <ul class="dropdown-menu" data-bind="foreach: difficulties">
 		<li><a href="#" data-bind="text: $data.display"></a></li>
 	      </ul>
 	    </li>
