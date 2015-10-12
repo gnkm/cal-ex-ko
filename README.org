@@ -6,5 +6,12 @@
 ** Description
 Knockout.js による計算問題練習サイト
 ** Requirement
+
+- Node.js
 ** Install
+
+#+BEGIN_SRC sh
+  $ npm install
+  $ bower install
+#+END_SRC
 ** Usage
